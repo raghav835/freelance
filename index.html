@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>HeaderPage</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 10%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            border-bottom: 1px solid #000;
+            z-index: 10;
+        }
+
+        nav ul li {
+            display: inline;
+            text-decoration: none;
+            margin: 10px 20px;
+            cursor: pointer;
+        }
+
+        .logo {
+            width: 200px;
+        }
+
+        .nav-btn {
+            padding: 15px 25px;
+            background: #000;
+            color: white;
+            border-radius: 40px;
+            font-size: 20px;
+            cursor: pointer;
+            border: none;
+        }
+
+        .nav-btn img {
+            width: 25px;
+            margin-left: 15px;
+        }
+
+        .nav-btn:hover {
+            background: aquamarine;
+        }
+
+        .header {
+            min-height: 100vh;
+            width: 100%;
+            background: linear-gradient(#eefff9 0%, #ffccc1 49%, #dcdbff 100%);
+            padding: 0 10%;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        h1 {
+            margin-top: 150px;
+            font-size: 13vw;
+            margin-bottom: 30px;
+            line-height: 11vw;
+            transition: all 0.5s ease;
+        }
+
+        .header button {
+            display: inline-flex;
+            align-items: center;
+            outline: none;
+            font-size: 18px;
+            border: none;
+            cursor: pointer;
+            outline: 0;
+            margin-right: 50px;
+        }
+
+        .btn-container {
+            margin: 20px 0;
+        }
+
+        .header p {
+            font-size: 3vw;
+            margin-top: 40px;
+        }
+
+        .dark-btn {
+            background: #000;
+            color: white;
+            border-radius: 40px;
+            padding: 10px 10px 10px 30px;
+        }
+
+        .dark-btn img {
+            width: 30px;
+            background: white;
+            border-radius: 50%;
+            padding: 6.89px;
+            margin-left: 30px;
+        }
+
+        .btn-white {
+            background: transparent;
+            text-decoration: underline;
+            font-size: 0px;
+        }
+
+        .btn-white img {
+            margin-left: 20px;
+            width: 30px;
+        }
+
+        .user-img {
+            width: 60%;
+            max-width: 350px;
+            position: absolute;
+            bottom: 20px;
+            right: 10%;
+            transition: all 0.5s ease;
+        }
+
+        /* ... Your existing CSS ... */
+
+        .header h1 {
+            margin-top: 150px;
+            font-size: 13vw;
+            margin-bottom: 30px;
+            line-height: 11vw;
+            position: relative;
+            overflow: hidden;
+            /* Ensure overflow is hidden to hide overflowing content */
+        }
+
+         .header p {
+            font-size: 3vw;
+            margin-top: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header p::before {
+            content: "Lorem ipsum"; /* Add your own placeholder text */
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right, transparent, #ff6b81, transparent); /* Adjust color as needed */
+            opacity: 1;
+            animation: electricShock 2s linear infinite alternate; /* Adjust the duration and animation as needed */
+        }
+
+        @keyframes electricShock {
+            0% {
+                transform: translateX(0) scaleY(1);
+            }
+            100% {
+                transform: translateX(5px) scaleY(1.2); /* Adjust the translation and scale as needed */
+            }
+        }
+
+        .header p {
+            font-size: 3vw;
+            margin-top: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header p::before {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right, transparent, #ff6b81, transparent); /* Adjust color as needed */
+            opacity: 1;
+            animation: electricShock 2s linear infinite alternate; /* Adjust the duration and animation as needed */
+        }
+
+        @keyframes electricShock {
+            0% {
+                transform: translateX(0) scaleY(1);
+            }
+            100% {
+                transform: translateX(5px) scaleY(1.2); /* Adjust the translation and scale as needed */
+            }
+        }
+
+        .header h1::before {
+            content: attr(data-text);
+            /* Use data-text attribute for dynamic text content */
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right, #eefff9, transparent 50%, #eefff9);
+            opacity: 1;
+            animation: revealText 5s linear infinite;
+            /* Adjust the duration as needed */
+        }
+
+        @keyframes revealText {
+            0% {
+                transform: translateX(100%);
+            }
+
+            50%,
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        /* ... Your existing CSS ... */
+    </style>
+</head>
+
+<body>
+    <nav>
+        <img src="images/logo.png" alt="logo" class="logo">
+        <ul>
+            <li>Home</li>
+            <li>Services</li>
+            <li>Projects</li>
+            <li>About Us</li>
+        </ul>
+        <button class="nav-btn">Get Started <img src="images/arrow-white.png" alt=""></button>
+    </nav>
+    <div class="header">
+        <h1>FREE<br>LANCER</h1>
+        <div class="btn-container">
+            <button class="dark-btn">Request call <img src="images/phone.png" alt="arrow"></button>
+            <button class="btn-white">Know more <img src="images/arrow-black.png" alt="arrow"></button>
+        </div>
+        <p data-text="Welcome to our freelance platform. Connect with skilled freelancers to get your projects done efficiently.">Welcome to our freelance platform. Connect with skilled freelancers to get your projects done efficiently.</p>
+        </p>
+        <img class="user-img" src="images/user.png" alt="user">
+    </div>
+
+    <script>
+        let navbar = document.querySelector('nav');
+
+        window.onscroll = function () {
+            if (scrollY > 0) {
+                navbar.style.background = '#96DED1';
+            } else {
+                navbar.style.background = '#DA70D6';
+            }
+        }
+
+        document.querySelector('h1').addEventListener('mouseover', function () {
+            document.querySelector('.user-img').style.transform = 'scale(1.1)';
+        });
+
+        document.querySelector('h1').addEventListener('mouseout', function () {
+            document.querySelector('.user-img').style.transform = 'scale(1)';
+        });
+    </script>
+</body>
+
+</html>
